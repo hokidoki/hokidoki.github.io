@@ -1,4 +1,4 @@
-export const allowedTags = [
+export const allowedDefaultTags = [
     "a", //anchor
     "b", //bold
     "strong", // it will be convert to bold.. Maybe 

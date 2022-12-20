@@ -1,20 +1,18 @@
 <script lang="ts">
-  import CustomToolbarStyle from "./Component/Editor/CustomToolbarStyle.svelte";
+  import Mce from "./mce/MCE.svelte";
   export let name: string;
 </script>
 
 <main>
   <h1>Hello Hitit!</h1>
-  <div class="editor">
-    <CustomToolbarStyle />
-  </div>
+  <Mce />
 </main>
 
 <style lang="scss">
   main {
     text-align: center;
     padding: 1em;
-    max-width: 240px;
+
     margin: 0 auto;
     h1 {
       color: blue;

@@ -5,8 +5,9 @@ import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
+import copy from 'rollup-plugin-copy';
 import css from 'rollup-plugin-css-only';
-
+import svg from "rollup-plugin-svg"
 const production = !process.env.ROLLUP_WATCH;
 
 function serve() {
@@ -46,6 +47,12 @@ export default {
 				dev: !production
 			}
 		}),
+
+		copy({
+			targets: [
+				{ src: 'node_modules/tinymce/*', dest: 'public/tinymce' }
+			]
+		}),
 		// we'll extract any component CSS out into
 		// a separate file - better for performance
 		css({ output: 'bundle.css' }),
@@ -64,7 +71,7 @@ export default {
 			sourceMap: !production,
 			inlineSources: !production
 		}),
-
+		svg(),
 		// In dev mode, call `npm run start` once
 		// the bundle has been generated
 		!production && serve(),
