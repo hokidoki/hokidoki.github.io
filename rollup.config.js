@@ -6,7 +6,9 @@ import { terser } from 'rollup-plugin-terser';
 import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
 import copy from 'rollup-plugin-copy';
-import css from 'rollup-plugin-css-only';
+import postcss from "rollup-plugin-postcss";
+import autoprefixer from "autoprefixer";
+import normalize from "postcss-normalize";
 import svg from "rollup-plugin-svg"
 const production = !process.env.ROLLUP_WATCH;
 
@@ -34,11 +36,20 @@ function serve() {
 export default {
 	input: 'src/main.ts',
 	output: {
-		sourcemap: true,
-		format: 'iife',
-		name: 'app',
-		file: 'public/build/bundle.js'
+		sourcemap: !production,
+		format: "iife",
+		name: "app",
+		dir: "./dist",
+		entryFileNames: "main.js"
 	},
+	// output: {
+	// 	sourcemap: true,
+	// 	format: 'iife',
+	// 	name: 'app',
+	// 	outDir: "./dist",
+	// 	// dir: "./dist",
+	// 	file: "./dist/bundle.js",
+	// },
 	plugins: [
 		svelte({
 			preprocess: sveltePreprocess({ sourceMap: !production }),
@@ -50,12 +61,14 @@ export default {
 
 		copy({
 			targets: [
-				{ src: 'node_modules/tinymce/*', dest: 'public/tinymce' }
+				{ src: "public/**/*", dest: "./dist" },
+				{ src: 'node_modules/tinymce/*', dest: './dist/tinymce' },
+				{ src: "src/assets/fonts/*", dest: "./dist/assets/fonts" },
 			]
 		}),
 		// we'll extract any component CSS out into
 		// a separate file - better for performance
-		css({ output: 'bundle.css' }),
+
 
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In
@@ -71,14 +84,19 @@ export default {
 			sourceMap: !production,
 			inlineSources: !production
 		}),
+		postcss({
+			extract: "global.css",
+			plugins: [autoprefixer(), normalize()],
+		}),
 		svg(),
 		// In dev mode, call `npm run start` once
 		// the bundle has been generated
+
 		!production && serve(),
 
 		// Watch the `public` directory and refresh the
 		// browser on changes when not in production
-		!production && livereload('public'),
+		!production && livereload("dist"),
 
 		// If we're building for production (npm run build
 		// instead of npm run dev), minify

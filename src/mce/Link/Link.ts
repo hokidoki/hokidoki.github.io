@@ -38,6 +38,7 @@ export function linkSetup(editor) {
                 const a = `<a href="${e.detail.url}" target="${e.detail.target}">${e.detail.displayValue}</a>`
                 editor.getBody().setAttribute('contenteditable', true);
                 editor.selection.setContent(a)
+                editor.insertContent("")
                 linkComponent.$destroy()
                 open = false
             })

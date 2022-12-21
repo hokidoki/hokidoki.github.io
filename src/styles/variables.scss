@@ -1,0 +1,30 @@
+@mixin DesktopSize {
+    @media all and (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin TabletSize {
+    @media all and (min-width:768px) and (max-width:1023px){
+        @content;
+    }
+}
+
+@mixin MobileSize{
+    @media all and (max-width:767px) {
+        @content;
+    }
+}
+
+@mixin UnderDesktopSize{
+    @media all and (max-width: 1023px) {
+        @content;
+    }
+}
+
+$UltraLight : 200;
+$LightReal : 250;
+$Light : 300;
+$Regular : 400;
+$Medium : 500;
+$Bold : 600;

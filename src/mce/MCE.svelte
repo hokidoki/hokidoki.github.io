@@ -4,23 +4,31 @@
   import { imageSetup } from "./Image/ImageSetup";
   import { linkSetup } from "./Link/Link";
   import { Forecolor } from "./Forecolor/Forecolor";
+  import { style_formats } from "./Format/FormatSetup";
   //Utils
   //Types
   //Props
+  export let value = "";
   //Constants
   const apiKey = "a0aiq41fhg206d5zmtkad4ybmqfiwtetptg2rncqpc900t6n";
   const conf = {
     menubar: false,
     toolbar:
-      "undo redo | color | bold | alignleft aligncenter alignright | __link__ | image",
-    plugins: "autoresize",
+      "undo redo | styles | color | bold | alignleft aligncenter alignright | __link__ | image",
+    plugins: "autoresize paste",
     resize: false,
     statusbar: false,
     height: "auto",
-    content_css: "/a.css",
+    content_css: "/build/global.css",
     object_resizing: "img",
     a11y_advanced_options: true,
     resize_img_proportional: true,
+    paste_enable_default_filters: false,
+    paste_webkit_styles: "color",
+    paste_as_text: true,
+    style_formats,
+    body_id: "HITIT-wiswig",
+    paste_block_drop: false, // Paste Options
     setup: (editor: any) => {
       imageSetup(editor);
       linkSetup(editor);
@@ -33,10 +41,13 @@
 </script>
 
 <div class="editor">
-  <Editor {apiKey} {conf} />
+  <Editor {apiKey} {conf} bind:value />
 </div>
 
 <style lang="scss">
+  :global(.tox div[role="menuitemcheckbox"][title="제목"]) {
+    height: 42px;
+  }
   .editor {
     width: 100%;
     height: 500px;

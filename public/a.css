@@ -31,3 +31,12 @@ body{
     color: white;
     
 }
+#HITIT-wiswig h1{
+    font-size: 40px;
+    color: red;
+}
+
+/* Nomal Pragraph */
+p{
+    margin: 0px;
+}
