@@ -1,19 +1,42 @@
 <script lang="ts">
   import Mce from "./mce/MCE.svelte";
-  export let name: string;
 
+  const selectedInputModes = [
+    { target: "original", displayValue: "FAQ 실제 인풋 크기" },
+    { target: "full", displayValue: "전체 화면" },
+  ];
+  let selectedInputMode: "original" | "full" = "full";
   let title = "힛잇 허브는 사용료나 약정이 어떻게 되나요?";
   let answer = "";
-  $: console.log(answer);
 </script>
 
 <main>
   <h1>Insert Here!</h1>
-  <div class="title">
-    제목<input type="text" bind:value={title} />
+  <div class="mode-change">
+    ModeChnage
+    <div class="input-target">
+      {#each selectedInputModes as target}
+        <label class:active={selectedInputMode === target.target}>
+          <input
+            type="radio"
+            name={target.target}
+            value={target.target}
+            bind:group={selectedInputMode}
+          />
+          {target.displayValue}
+        </label>
+      {/each}
+    </div>
   </div>
-  <Mce bind:value={answer} />
+  <div class="inputs" class:faq={selectedInputMode === "original"}>
+    <div class="title">
+      제목<input type="text" bind:value={title} />
+    </div>
+    <Mce bind:value={answer} />
+  </div>
+
   <h1>FAQ Result</h1>
+
   <div class="result-wrapper" id="H">
     <div class="question-box box">
       <div class="img" />
@@ -36,6 +59,13 @@
     padding: 1em;
 
     margin: 0 auto;
+    .inputs {
+      width: 100%;
+
+      &.faq {
+        max-width: 622px;
+      }
+    }
     h1 {
       color: blue;
       text-transform: uppercase;
@@ -96,6 +126,36 @@
         height: max-content;
         padding: 10px 20px;
         background-color: white;
+      }
+    }
+  }
+  .mode-change {
+    display: flex;
+    margin: 10px 0px;
+    /* flex-direction: column; */
+    align-items: center;
+    gap: 10px;
+  }
+  .input-target {
+    display: flex;
+    gap: 18px;
+
+    label {
+      width: 50%;
+      padding: 5px;
+      text-align: center;
+      border: 1px solid #bcbfc3;
+      border-radius: 5px;
+      color: #6d6f76;
+      cursor: pointer;
+      background-color: white;
+      &.active {
+        color: #6591fa;
+        border-color: #5b88f4;
+      }
+
+      input {
+        display: none;
       }
     }
   }

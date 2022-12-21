@@ -22,10 +22,10 @@
   .link-box {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
     .link-title {
       color: #6d6f76;
-      font-size: 0.875rem;
+      font-size: 1rem;
     }
 
     .link-input {
@@ -34,6 +34,7 @@
       padding: 10px;
       height: 40px;
       width: 100%;
+      border-radius: 5px;
     }
   }
 </style>

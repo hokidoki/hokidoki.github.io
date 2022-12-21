@@ -32,9 +32,28 @@
     gap: 10px;
     display: flex;
     justify-content: flex-end;
+    margin-top: 20px;
 
     button {
       cursor: pointer;
+      color: white;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      height: 40px;
+      border-radius: 5px;
+      justify-content: center;
+      font-size: 1.25rem;
+    }
+
+    .cancel {
+      width: 92px;
+      background-color: #bcbfc3;
+    }
+
+    .save {
+      flex-grow: 1;
+      background-color: #6d6f76;
     }
   }
 </style>

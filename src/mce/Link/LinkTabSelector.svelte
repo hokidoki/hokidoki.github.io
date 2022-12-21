@@ -31,15 +31,20 @@
 <style lang="scss">
   .input-target {
     display: flex;
-    gap: 10px;
+    gap: 18px;
 
     label {
-      padding: 10px;
-      background-color: #d8d9df;
+      width: 50%;
+      padding: 5px;
+      text-align: center;
+      border: 1px solid #bcbfc3;
       border-radius: 5px;
+      color: #6d6f76;
       cursor: pointer;
+      background-color: white;
       &.active {
-        background-color: #6d6f76;
+        color: #6591fa;
+        border-color: #5b88f4;
       }
 
       input {

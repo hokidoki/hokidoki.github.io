@@ -17,13 +17,20 @@
     container.dispatchEvent(event);
     //
   }
+
+  function cancelHandler() {
+    const event = new Event("CANCEL");
+    const container = wrapper.parentElement.parentElement;
+    container.dispatchEvent(event);
+  }
   //Do
 </script>
 
 <div bind:this={wrapper} class:isOpen class="picker-wrapper">
   <slot />
-  <div class="button-wrappers">
-    <button on:click={saveHandler}>확인</button>
+  <div class="buttons">
+    <button class="cancel" on:click={cancelHandler}> 취소 </button>
+    <button class="save" on:click={saveHandler}> 확인 </button>
   </div>
 </div>
 
@@ -85,6 +92,35 @@
       height: 30px;
       background-color: #eee;
       padding: 0px 10px;
+    }
+    .buttons {
+      width: 100%;
+      gap: 10px;
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+
+      button {
+        cursor: pointer;
+        color: white;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        height: 40px;
+        border-radius: 5px;
+        justify-content: center;
+        font-size: 1.25rem;
+      }
+
+      .cancel {
+        width: 92px;
+        background-color: #bcbfc3;
+      }
+
+      .save {
+        flex-grow: 1;
+        background-color: #6d6f76;
+      }
     }
   }
 </style>

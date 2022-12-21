@@ -28,7 +28,6 @@
   function saveHandler() {
     const { r, g, b } = rgb;
     dispatch("SAVE", rgbToHex(r, g, b));
-    console.log(rgb);
   }
 
   function cancelHandler() {
@@ -37,6 +36,7 @@
 
   onMount(() => {
     container.addEventListener("SAVE", saveHandler);
+    container.addEventListener("CANCEL", cancelHandler);
   });
 
   $: !isOpen && cancelHandler();

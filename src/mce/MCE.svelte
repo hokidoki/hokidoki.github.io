@@ -19,7 +19,7 @@
     resize: false,
     statusbar: false,
     height: "auto",
-    content_css: "/build/global.css",
+    content_css: "/global.css",
     object_resizing: "img",
     a11y_advanced_options: true,
     resize_img_proportional: true,

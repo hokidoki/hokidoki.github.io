@@ -18,6 +18,7 @@ export function imageSetup(editor: any) {
             return;
         }
         const url = URL.createObjectURL(__file);
+        alert("이때, 이미지를 서버로 전송합니다.")
         editor.insertContent(
             `<figure><img class="user-import" src="${url}"/></figure>`
         );

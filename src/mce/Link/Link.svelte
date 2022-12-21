@@ -47,16 +47,17 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 10px;
-    width: 500px;
-    max-width: calc(100% - 30px);
+    padding: 30px;
+    width: 400px;
+    max-width: calc(100% - 160px);
     box-sizing: border-box;
     position: absolute;
     background-color: white;
-    border: 1px solid black;
+
     border-radius: 5px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
   }
 </style>
