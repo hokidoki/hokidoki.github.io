@@ -2,6 +2,7 @@
   "name": "svelte-app",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://hokidoki.github.io/",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
@@ -16,6 +17,7 @@
     "@types/quill": "^2.0.9",
     "@types/tinymce": "^4.6.5",
     "autoprefixer": "^10.4.13",
+    "gh-pages": "^4.0.0",
     "node-sass": "^8.0.0",
     "postcss": "^8.4.20",
     "postcss-normalize": "^10.0.1",
