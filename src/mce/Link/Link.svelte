@@ -22,9 +22,17 @@
   }
 
   function save() {
+    const reg =
+      /^((http(s?))\:\/\/)([0-9a-zA-Z\-]+\.)+[a-zA-Z]{2,6}(\:[0-9]+)?(\/\S*)?$/;
+    let url = __url;
+    if (reg.test(url) === false)
+      url = confirm("'https://'가 존재하지 않습니다. 추가하시겠습니까?")
+        ? "https://" + url
+        : url;
+
     dispatch("SAVE", {
       displayValue: __displayValue || "링크",
-      url: __url,
+      url,
       target,
     });
   }

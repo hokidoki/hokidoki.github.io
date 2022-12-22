@@ -13,7 +13,7 @@ export function linkSetup(editor) {
 
             const isActive = buttonApi.isActive();
             const area = getEditorArea()
-            let text = editor.selection.getContent();
+            let text = editor.selection.getContent({ format: 'text' })
             let url = ""
 
             if (isActive) {
