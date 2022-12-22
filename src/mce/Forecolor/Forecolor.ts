@@ -2,8 +2,8 @@ import ForeColor from "./ForeColor.svelte";
 import TextColor from "../../Icon/TextColor.svg"
 const tooltip = `font-color`;
 const __colors = [
-    "#46474B", "gray5",
     "#333338", "gray6",
+    "#46474B", "gray5",
     "#6D6F76", "gray4",
     "#BCBFC3", "gray3",
     "#D8D9DF", "gray2",

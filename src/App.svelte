@@ -8,6 +8,7 @@
   let selectedInputMode: "original" | "full" = "full";
   let title = "힛잇 허브는 사용료나 약정이 어떻게 되나요?";
   let answer = "";
+  let destory = false;
 </script>
 
 <main>
@@ -32,7 +33,9 @@
     <div class="title">
       제목<input type="text" bind:value={title} />
     </div>
-    <Mce bind:value={answer} />
+    {#if destory === false}
+      <Mce bind:value={answer} />
+    {/if}
   </div>
 
   <h1>FAQ Result</h1>

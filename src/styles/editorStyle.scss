@@ -118,19 +118,47 @@
 
 	a{
 		color :#3c68D6;
+		text-decoration: underline;
+		text-underline-offset: 2px;
 	}
 
 	strong{
-		font-weight: 600;
+		font-weight: 550;
 	}
 
 	img{
 		max-width: 100% !important;
 	}
+
+	// For Editor
+	&.layer-under-desktop{
+		h1{
+			font-size: 30px;
+			line-height: 40px;
+			
+		}
+		h2{
+			// 
+			
+			font-size: 20px;
+			line-height: 30px;
+			
+		}
+		p{
+			
+			font-size: 16px;
+			line-height: 25px;
+			
+		}
+		pre.annotation{
+			font-size: 14px;
+			line-height: 20px;
+		}
+	}
 }
 
 @include UnderDesktopSize{
-	#HITIT-wiswig{
+	#HITIT-wiswig:not(.mce-content-body){
 		h1{
 			font-size: 30px;
 			line-height: 40px;
@@ -155,11 +183,11 @@
 		}
 	
 		a{
-			color :#3c68D6;
+			// 
 		}
 	
 		strong{
-			font-weight: 600;
+			// 
 		}
 	}
 }

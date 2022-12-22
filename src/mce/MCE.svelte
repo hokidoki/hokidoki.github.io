@@ -33,6 +33,24 @@
       imageSetup(editor);
       linkSetup(editor);
       Forecolor(editor);
+      const callback = () => {
+        const bodySize = document.documentElement.clientWidth; //View Width;
+        const underDesktopSize = 1024;
+        const body = editor.getBody() as HTMLBodyElement;
+        if (bodySize < underDesktopSize) {
+          body.classList.add("layer-under-desktop");
+        } else {
+          body.classList.remove("layer-under-desktop");
+        }
+      };
+
+      editor.on("init", () => {
+        callback();
+        window.addEventListener("resize", callback);
+      });
+      editor.on("remove", () => {
+        window.removeEventListener("resize", callback);
+      });
     },
   };
   //Variables
