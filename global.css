@@ -180,35 +180,47 @@ a {
 }
 #HITIT-wiswig a {
   color: #3c68D6;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 #HITIT-wiswig strong {
-  font-weight: 600;
+  font-weight: 550;
 }
 #HITIT-wiswig img {
   max-width: 100% !important;
 }
+#HITIT-wiswig.layer-under-desktop h1 {
+  font-size: 30px;
+  line-height: 40px;
+}
+#HITIT-wiswig.layer-under-desktop h2 {
+  font-size: 20px;
+  line-height: 30px;
+}
+#HITIT-wiswig.layer-under-desktop p {
+  font-size: 16px;
+  line-height: 25px;
+}
+#HITIT-wiswig.layer-under-desktop pre.annotation {
+  font-size: 14px;
+  line-height: 20px;
+}
 
 @media all and (max-width: 1023px) {
-  #HITIT-wiswig h1 {
+  #HITIT-wiswig:not(.mce-content-body) h1 {
     font-size: 30px;
     line-height: 40px;
   }
-  #HITIT-wiswig h2 {
+  #HITIT-wiswig:not(.mce-content-body) h2 {
     font-size: 20px;
     line-height: 30px;
   }
-  #HITIT-wiswig p {
+  #HITIT-wiswig:not(.mce-content-body) p {
     font-size: 16px;
     line-height: 25px;
   }
-  #HITIT-wiswig pre.annotation {
+  #HITIT-wiswig:not(.mce-content-body) pre.annotation {
     font-size: 14px;
     line-height: 20px;
-  }
-  #HITIT-wiswig a {
-    color: #3c68D6;
-  }
-  #HITIT-wiswig strong {
-    font-weight: 600;
   }
 }

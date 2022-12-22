@@ -731,7 +731,7 @@ var app = (function () {
     }
 
     // (127:2) {#if inline}
-    function create_if_block$3(ctx) {
+    function create_if_block$4(ctx) {
     	let div;
 
     	const block = {
@@ -757,7 +757,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$3.name,
+    		id: create_if_block$4.name,
     		type: "if",
     		source: "(127:2) {#if inline}",
     		ctx
@@ -770,7 +770,7 @@ var app = (function () {
     	let div;
 
     	function select_block_type(ctx, dirty) {
-    		if (/*inline*/ ctx[1]) return create_if_block$3;
+    		if (/*inline*/ ctx[1]) return create_if_block$4;
     		return create_else_block$2;
     	}
 
@@ -4282,7 +4282,7 @@ var app = (function () {
     }
 
     // (125:1) {#if canChangeMode}
-    function create_if_block$2(ctx) {
+    function create_if_block$3(ctx) {
     	let button;
     	let t_value = /*modes*/ ctx[9][/*mode*/ ctx[4]] + "";
     	let t;
@@ -4323,7 +4323,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$2.name,
+    		id: create_if_block$3.name,
     		type: "if",
     		source: "(125:1) {#if canChangeMode}",
     		ctx
@@ -4344,7 +4344,7 @@ var app = (function () {
 
     	let current_block_type = select_block_type(ctx);
     	let if_block0 = current_block_type(ctx);
-    	let if_block1 = /*canChangeMode*/ ctx[3] && create_if_block$2(ctx);
+    	let if_block1 = /*canChangeMode*/ ctx[3] && create_if_block$3(ctx);
 
     	const block = {
     		c: function create() {
@@ -4381,7 +4381,7 @@ var app = (function () {
     				if (if_block1) {
     					if_block1.p(ctx, dirty);
     				} else {
-    					if_block1 = create_if_block$2(ctx);
+    					if_block1 = create_if_block$3(ctx);
     					if_block1.c();
     					if_block1.m(div, null);
     				}
@@ -5767,7 +5767,7 @@ var app = (function () {
     }
 
     // (26:2) {#if a11yGuidelines}
-    function create_if_block$1(ctx) {
+    function create_if_block$2(ctx) {
     	let span;
 
     	const block = {
@@ -5789,7 +5789,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$1.name,
+    		id: create_if_block$2.name,
     		type: "if",
     		source: "(26:2) {#if a11yGuidelines}",
     		ctx
@@ -5836,7 +5836,7 @@ var app = (function () {
     		each_blocks[i] = null;
     	});
 
-    	let if_block = /*a11yGuidelines*/ ctx[4] && create_if_block$1(ctx);
+    	let if_block = /*a11yGuidelines*/ ctx[4] && create_if_block$2(ctx);
 
     	const block = {
     		c: function create() {
@@ -5944,7 +5944,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block$1(ctx);
+    					if_block = create_if_block$2(ctx);
     					if_block.c();
     					if_block.m(div, null);
     				}
@@ -6952,7 +6952,7 @@ var app = (function () {
     }
 
     // (187:2) {#if isA11y}
-    function create_if_block(ctx) {
+    function create_if_block$1(ctx) {
     	let switch_instance;
     	let switch_instance_anchor;
     	let current;
@@ -7037,7 +7037,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block.name,
+    		id: create_if_block$1.name,
     		type: "if",
     		source: "(187:2) {#if isA11y}",
     		ctx
@@ -7114,7 +7114,7 @@ var app = (function () {
     	binding_callbacks.push(() => bind(slider, 'h', slider_h_binding, /*hsv*/ ctx[1].h));
     	let if_block0 = /*isAlpha*/ ctx[7] && create_if_block_2(ctx);
     	let if_block1 = /*isTextInput*/ ctx[9] && create_if_block_1(ctx);
-    	let if_block2 = /*isA11y*/ ctx[11] && create_if_block(ctx);
+    	let if_block2 = /*isA11y*/ ctx[11] && create_if_block$1(ctx);
 
     	const block = {
     		c: function create() {
@@ -7232,7 +7232,7 @@ var app = (function () {
     						transition_in(if_block2, 1);
     					}
     				} else {
-    					if_block2 = create_if_block(ctx);
+    					if_block2 = create_if_block$1(ctx);
     					if_block2.c();
     					transition_in(if_block2, 1);
     					if_block2.m(if_block2_anchor.parentNode, if_block2_anchor);
@@ -8531,8 +8531,8 @@ var app = (function () {
 
     const tooltip = `font-color`;
     const __colors = [
-        "#46474B", "gray5",
         "#333338", "gray6",
+        "#46474B", "gray5",
         "#6D6F76", "gray4",
         "#BCBFC3", "gray3",
         "#D8D9DF", "gray2",
@@ -8658,7 +8658,7 @@ var app = (function () {
     			div = element("div");
     			create_component(editor.$$.fragment);
     			attr_dev(div, "class", "editor svelte-14k4bor");
-    			add_location(div, file$1, 40, 0, 1085);
+    			add_location(div, file$1, 58, 0, 1746);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -8733,6 +8733,27 @@ var app = (function () {
     			imageSetup(editor);
     			linkSetup(editor);
     			Forecolor(editor);
+
+    			const callback = () => {
+    				const bodySize = document.documentElement.clientWidth; //View Width;
+    				const underDesktopSize = 1024;
+    				const body = editor.getBody();
+
+    				if (bodySize < underDesktopSize) {
+    					body.classList.add("layer-under-desktop");
+    				} else {
+    					body.classList.remove("layer-under-desktop");
+    				}
+    			};
+
+    			editor.on("init", () => {
+    				callback();
+    				window.addEventListener("resize", callback);
+    			});
+
+    			editor.on("remove", () => {
+    				window.removeEventListener("resize", callback);
+    			});
     		}
     	};
 
@@ -8800,16 +8821,16 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[8] = list[i];
+    	child_ctx[9] = list[i];
     	return child_ctx;
     }
 
-    // (16:6) {#each selectedInputModes as target}
+    // (17:6) {#each selectedInputModes as target}
     function create_each_block(ctx) {
     	let label;
     	let input;
     	let t0;
-    	let t1_value = /*target*/ ctx[8].displayValue + "";
+    	let t1_value = /*target*/ ctx[9].displayValue + "";
     	let t1;
     	let t2;
     	let mounted;
@@ -8823,15 +8844,15 @@ var app = (function () {
     			t1 = text(t1_value);
     			t2 = space();
     			attr_dev(input, "type", "radio");
-    			attr_dev(input, "name", /*target*/ ctx[8].target);
-    			input.__value = /*target*/ ctx[8].target;
+    			attr_dev(input, "name", /*target*/ ctx[9].target);
+    			input.__value = /*target*/ ctx[9].target;
     			input.value = input.__value;
     			attr_dev(input, "class", "svelte-nuo3c5");
-    			/*$$binding_groups*/ ctx[5][0].push(input);
-    			add_location(input, file, 17, 10, 516);
+    			/*$$binding_groups*/ ctx[6][0].push(input);
+    			add_location(input, file, 18, 10, 537);
     			attr_dev(label, "class", "svelte-nuo3c5");
-    			toggle_class(label, "active", /*selectedInputMode*/ ctx[0] === /*target*/ ctx[8].target);
-    			add_location(label, file, 16, 8, 447);
+    			toggle_class(label, "active", /*selectedInputMode*/ ctx[0] === /*target*/ ctx[9].target);
+    			add_location(label, file, 17, 8, 468);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, label, anchor);
@@ -8842,7 +8863,7 @@ var app = (function () {
     			append_dev(label, t2);
 
     			if (!mounted) {
-    				dispose = listen_dev(input, "change", /*input_change_handler*/ ctx[4]);
+    				dispose = listen_dev(input, "change", /*input_change_handler*/ ctx[5]);
     				mounted = true;
     			}
     		},
@@ -8852,12 +8873,12 @@ var app = (function () {
     			}
 
     			if (dirty & /*selectedInputMode, selectedInputModes*/ 9) {
-    				toggle_class(label, "active", /*selectedInputMode*/ ctx[0] === /*target*/ ctx[8].target);
+    				toggle_class(label, "active", /*selectedInputMode*/ ctx[0] === /*target*/ ctx[9].target);
     			}
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(label);
-    			/*$$binding_groups*/ ctx[5][0].splice(/*$$binding_groups*/ ctx[5][0].indexOf(input), 1);
+    			/*$$binding_groups*/ ctx[6][0].splice(/*$$binding_groups*/ ctx[6][0].indexOf(input), 1);
     			mounted = false;
     			dispose();
     		}
@@ -8867,7 +8888,70 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(16:6) {#each selectedInputModes as target}",
+    		source: "(17:6) {#each selectedInputModes as target}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (34:4) {#if destory === false}
+    function create_if_block(ctx) {
+    	let mce;
+    	let updating_value;
+    	let current;
+
+    	function mce_value_binding(value) {
+    		/*mce_value_binding*/ ctx[8](value);
+    	}
+
+    	let mce_props = {};
+
+    	if (/*answer*/ ctx[2] !== void 0) {
+    		mce_props.value = /*answer*/ ctx[2];
+    	}
+
+    	mce = new MCE({ props: mce_props, $$inline: true });
+    	binding_callbacks.push(() => bind(mce, 'value', mce_value_binding, /*answer*/ ctx[2]));
+
+    	const block = {
+    		c: function create() {
+    			create_component(mce.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(mce, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const mce_changes = {};
+
+    			if (!updating_value && dirty & /*answer*/ 4) {
+    				updating_value = true;
+    				mce_changes.value = /*answer*/ ctx[2];
+    				add_flush_callback(() => updating_value = false);
+    			}
+
+    			mce.$set(mce_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(mce.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(mce.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(mce, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block.name,
+    		type: "if",
+    		source: "(34:4) {#if destory === false}",
     		ctx
     	});
 
@@ -8887,8 +8971,6 @@ var app = (function () {
     	let t4;
     	let input;
     	let t5;
-    	let mce;
-    	let updating_value;
     	let t6;
     	let h11;
     	let t8;
@@ -8914,18 +8996,7 @@ var app = (function () {
     		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
     	}
 
-    	function mce_value_binding(value) {
-    		/*mce_value_binding*/ ctx[7](value);
-    	}
-
-    	let mce_props = {};
-
-    	if (/*answer*/ ctx[2] !== void 0) {
-    		mce_props.value = /*answer*/ ctx[2];
-    	}
-
-    	mce = new MCE({ props: mce_props, $$inline: true });
-    	binding_callbacks.push(() => bind(mce, 'value', mce_value_binding, /*answer*/ ctx[2]));
+    	let if_block = /*destory*/ ctx[4] === false && create_if_block(ctx);
 
     	const block = {
     		c: function create() {
@@ -8947,7 +9018,7 @@ var app = (function () {
     			t4 = text("제목");
     			input = element("input");
     			t5 = space();
-    			create_component(mce.$$.fragment);
+    			if (if_block) if_block.c();
     			t6 = space();
     			h11 = element("h1");
     			h11.textContent = "FAQ Result";
@@ -8964,39 +9035,39 @@ var app = (function () {
     			t12 = space();
     			div8 = element("div");
     			attr_dev(h10, "class", "svelte-nuo3c5");
-    			add_location(h10, file, 11, 2, 300);
+    			add_location(h10, file, 12, 2, 321);
     			attr_dev(div0, "class", "input-target svelte-nuo3c5");
-    			add_location(div0, file, 14, 4, 369);
+    			add_location(div0, file, 15, 4, 390);
     			attr_dev(div1, "class", "mode-change svelte-nuo3c5");
-    			add_location(div1, file, 12, 2, 324);
+    			add_location(div1, file, 13, 2, 345);
     			attr_dev(input, "type", "text");
     			attr_dev(input, "class", "svelte-nuo3c5");
-    			add_location(input, file, 30, 8, 854);
+    			add_location(input, file, 31, 8, 875);
     			attr_dev(div2, "class", "title svelte-nuo3c5");
-    			add_location(div2, file, 29, 4, 826);
+    			add_location(div2, file, 30, 4, 847);
     			attr_dev(div3, "class", "inputs svelte-nuo3c5");
     			toggle_class(div3, "faq", /*selectedInputMode*/ ctx[0] === "original");
-    			add_location(div3, file, 28, 2, 756);
+    			add_location(div3, file, 29, 2, 777);
     			attr_dev(h11, "class", "svelte-nuo3c5");
-    			add_location(h11, file, 35, 2, 950);
+    			add_location(h11, file, 38, 2, 1011);
     			attr_dev(div4, "class", "img svelte-nuo3c5");
-    			add_location(div4, file, 39, 6, 1050);
+    			add_location(div4, file, 42, 6, 1111);
     			attr_dev(div5, "class", "text svelte-nuo3c5");
-    			add_location(div5, file, 40, 6, 1076);
+    			add_location(div5, file, 43, 6, 1137);
     			attr_dev(div6, "class", "question-box box svelte-nuo3c5");
-    			add_location(div6, file, 38, 4, 1013);
+    			add_location(div6, file, 41, 4, 1074);
     			attr_dev(div7, "class", "text svelte-nuo3c5");
     			attr_dev(div7, "id", "HITIT-wiswig");
-    			add_location(div7, file, 45, 6, 1174);
+    			add_location(div7, file, 48, 6, 1235);
     			attr_dev(div8, "class", "img svelte-nuo3c5");
-    			add_location(div8, file, 48, 6, 1253);
+    			add_location(div8, file, 51, 6, 1314);
     			attr_dev(div9, "class", "answer-box box svelte-nuo3c5");
-    			add_location(div9, file, 44, 4, 1139);
+    			add_location(div9, file, 47, 4, 1200);
     			attr_dev(div10, "class", "result-wrapper svelte-nuo3c5");
     			attr_dev(div10, "id", "H");
-    			add_location(div10, file, 37, 2, 973);
+    			add_location(div10, file, 40, 2, 1034);
     			attr_dev(main, "class", "svelte-nuo3c5");
-    			add_location(main, file, 10, 0, 291);
+    			add_location(main, file, 11, 0, 312);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -9020,7 +9091,7 @@ var app = (function () {
     			append_dev(div2, input);
     			set_input_value(input, /*title*/ ctx[1]);
     			append_dev(div3, t5);
-    			mount_component(mce, div3, null);
+    			if (if_block) if_block.m(div3, null);
     			append_dev(main, t6);
     			append_dev(main, h11);
     			append_dev(main, t8);
@@ -9039,7 +9110,7 @@ var app = (function () {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(input, "input", /*input_input_handler*/ ctx[6]);
+    				dispose = listen_dev(input, "input", /*input_input_handler*/ ctx[7]);
     				mounted = true;
     			}
     		},
@@ -9072,15 +9143,7 @@ var app = (function () {
     				set_input_value(input, /*title*/ ctx[1]);
     			}
 
-    			const mce_changes = {};
-
-    			if (!updating_value && dirty & /*answer*/ 4) {
-    				updating_value = true;
-    				mce_changes.value = /*answer*/ ctx[2];
-    				add_flush_callback(() => updating_value = false);
-    			}
-
-    			mce.$set(mce_changes);
+    			if (/*destory*/ ctx[4] === false) if_block.p(ctx, dirty);
 
     			if (!current || dirty & /*selectedInputMode*/ 1) {
     				toggle_class(div3, "faq", /*selectedInputMode*/ ctx[0] === "original");
@@ -9090,17 +9153,17 @@ var app = (function () {
     			if (!current || dirty & /*answer*/ 4) div7.innerHTML = /*answer*/ ctx[2];		},
     		i: function intro(local) {
     			if (current) return;
-    			transition_in(mce.$$.fragment, local);
+    			transition_in(if_block);
     			current = true;
     		},
     		o: function outro(local) {
-    			transition_out(mce.$$.fragment, local);
+    			transition_out(if_block);
     			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(main);
     			destroy_each(each_blocks, detaching);
-    			destroy_component(mce);
+    			if (if_block) if_block.d();
     			mounted = false;
     			dispose();
     		}
@@ -9132,6 +9195,7 @@ var app = (function () {
     	let selectedInputMode = "full";
     	let title = "힛잇 허브는 사용료나 약정이 어떻게 되나요?";
     	let answer = "";
+    	let destory = false;
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
@@ -9160,13 +9224,15 @@ var app = (function () {
     		selectedInputModes,
     		selectedInputMode,
     		title,
-    		answer
+    		answer,
+    		destory
     	});
 
     	$$self.$inject_state = $$props => {
     		if ('selectedInputMode' in $$props) $$invalidate(0, selectedInputMode = $$props.selectedInputMode);
     		if ('title' in $$props) $$invalidate(1, title = $$props.title);
     		if ('answer' in $$props) $$invalidate(2, answer = $$props.answer);
+    		if ('destory' in $$props) $$invalidate(4, destory = $$props.destory);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -9178,6 +9244,7 @@ var app = (function () {
     		title,
     		answer,
     		selectedInputModes,
+    		destory,
     		input_change_handler,
     		$$binding_groups,
     		input_input_handler,
